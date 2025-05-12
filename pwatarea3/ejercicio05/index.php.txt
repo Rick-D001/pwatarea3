@@ -1,0 +1,44 @@
+<?php
+$directorio_imagenes = 'img/';
+$imagenes = [];
+
+// Escanear el directorio de imágenes
+if (is_dir($directorio_imagenes)) {
+    $archivos = scandir($directorio_imagenes);
+    foreach ($archivos as $archivo) {
+        $extension = strtolower(pathinfo($archivo, PATHINFO_EXTENSION));
+        // Filtrar solo archivos de imagen (puedes añadir más extensiones si es necesario)
+        if (in_array($extension, ['jpg', 'jpeg', 'png', 'gif'])) {
+            $imagenes[] = $directorio_imagenes . $archivo;
+        }
+    }
+} else {
+    echo '<p style="color: red;">Error: El directorio de imágenes no existe.</p>';
+}
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <h1>Nuestra Galería</h1>
+        <div class="image-list">
+            <?php if (!empty($imagenes)): ?>
+                <?php foreach ($imagenes as $imagen): ?>
+                    <div class="image-item">
+                        <img src="<?php echo $imagen; ?>" alt="<?php echo basename($imagen); ?>">
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay imágenes en la galería.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</body>
+</html>

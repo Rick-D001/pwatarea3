@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación y Menú de Ejercicios</title>
+</head>
+<body>
+    <h1>Mi Presentación</h1>
+    <p>Aquí puedes escribir algo sobre ti.</p>
+
+    <h2>Menú de Ejercicios</h2>
+    <ul>
+        <li><a href="ejercicio01/index.php">Ejercicio 1: Menú Desplegable</a></li>
+        <li><a href="ejercicio02/index.php">Ejercicio 2: Formulario de Contacto</a></li>
+        <li><a href="ejercicio03/index.php">Ejercicio 3: Contador de Visitas</a></li>
+        <li><a href="ejercicio04/index.php">Ejercicio 4: Juego de Adivinanzas</a></li>
+        <li><a href="ejercicio05/index.php">Ejercicio 5: Galería de Imágenes</a></li>
+        <li><a href="ejercicio06/login.php">Ejercicio 6: Sistema de Login</a></li>
+    </ul>
+</body>
+</html>
